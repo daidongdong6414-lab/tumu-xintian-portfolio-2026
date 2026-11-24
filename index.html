@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>土木心田设计 · 空间与文化设计案例 2026</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --bg:#F6F5F1; --card:#FFFFFF; --ink:#1B1915; --ink2:#514C45; --muted:#8B8378;
+  --line:#E8E2D7; --accent:#2F5550; --gold:#9A7B4F; --radius:22px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:"Noto Sans SC","Microsoft JhengHei UI Light","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.6;}
+img{display:block;width:100%;height:100%;object-fit:cover;}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px;}
+h1,h2,h3{font-family:"Noto Serif SC",serif;}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(246,245,241,.8);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(232,226,215,.7);}
+.nav-in{max-width:1280px;margin:0 auto;padding:14px 40px;display:flex;align-items:center;gap:14px;}
+.nav-logo{height:34px;width:auto;}
+.nav-brand{font-weight:700;letter-spacing:2px;font-size:15px;line-height:1.2;}
+.nav-brand small{display:block;font-family:"Noto Sans SC";font-weight:300;font-size:10px;letter-spacing:3px;color:var(--muted);margin-top:2px;}
+.nav-links{margin-left:auto;display:flex;gap:28px;}
+.nav-links a{color:var(--ink2);text-decoration:none;font-size:13px;letter-spacing:1px;}
+.nav-links a:hover{color:var(--accent);}
+
+/* hero */
+.hero{padding:150px 0 70px;}
+.hero-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:52px;align-items:center;}
+.eyebrow{font-size:12px;letter-spacing:5px;color:var(--accent);margin-bottom:24px;}
+.hero h1{font-weight:900;font-size:clamp(40px,5vw,62px);line-height:1.16;letter-spacing:2px;}
+.hero-year{margin-top:18px;display:inline-block;font-size:14px;letter-spacing:3px;color:var(--accent);border:1px solid var(--line);border-radius:30px;padding:7px 18px;background:var(--card);}
+.hero-sub{margin-top:24px;font-size:16px;color:var(--ink2);max-width:440px;line-height:2;}
+.hero-meta{margin-top:28px;display:flex;gap:24px;font-size:13px;color:var(--muted);flex-wrap:wrap;}
+.hero-media{border-radius:28px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 30px 80px rgba(60,50,35,.18);}
+.hero-cta{margin-top:36px;display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:2px;color:var(--accent);text-decoration:none;}
+
+/* section head */
+.sec{padding:80px 0;}
+.sec-head{margin-bottom:44px;max-width:740px;}
+.sec-head .kicker{font-size:12px;letter-spacing:4px;color:var(--accent);margin-bottom:14px;}
+.sec-head h2{font-size:clamp(28px,3vw,38px);font-weight:700;letter-spacing:1px;}
+.sec-head p{margin-top:16px;color:var(--ink2);line-height:2;}
+
+/* bento cards */
+.card{background:var(--card);border-radius:var(--radius);padding:34px;border:1px solid var(--line);
+  box-shadow:0 10px 30px rgba(60,50,35,.06);}
+.philo-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px;}
+.philo-main{grid-column:span 7;display:flex;flex-direction:column;}
+.philo-main h3{font-size:24px;margin-bottom:16px;letter-spacing:1px;}
+.philo-main p{color:var(--ink2);line-height:2;}
+.stats{margin-top:auto;padding-top:30px;display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.stats .n{font-size:30px;color:var(--accent);font-weight:700;}
+.stats .l{font-size:12px;color:var(--muted);margin-top:4px;letter-spacing:1px;}
+.philo-item{grid-column:span 5;}
+.philo-item .idx,.derive-no,.proc-no{font-size:13px;color:var(--accent);letter-spacing:2px;}
+.philo-item h3{font-size:19px;margin:12px 0 6px;}
+.philo-item .en{font-size:11px;letter-spacing:2px;color:var(--muted);margin-bottom:12px;}
+.philo-item p{font-size:13.5px;color:var(--ink2);line-height:1.9;}
+.philo-item.wide{grid-column:span 4;}
+
+/* motifs */
+.motif-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+.motif-card{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);}
+.motif-img{aspect-ratio:16/9;overflow:hidden;}
+.motif-card figcaption{padding:28px;}
+.motif-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;}
+.motif-head h3{font-size:19px;}
+.motif-head span{font-size:11px;letter-spacing:2px;color:var(--muted);}
+.motif-card figcaption p{margin-top:12px;font-size:13.5px;color:var(--ink2);line-height:1.9;}
+.motif-ref{margin-top:14px;font-size:12px;color:var(--gold);letter-spacing:1px;}
+
+.derive{margin-top:22px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.derive-step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;}
+.derive-step h3{font-size:18px;margin:12px 0 4px;}
+.derive-en{font-size:11px;letter-spacing:2px;color:var(--muted);margin-bottom:12px;}
+.derive-step p{font-size:13px;color:var(--ink2);line-height:1.9;}
+
+/* works */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px;}
+.tab{border:1px solid var(--line);background:#fff;border-radius:30px;padding:9px 18px;font-size:13px;
+  color:var(--ink2);cursor:pointer;transition:all .25s;font-family:inherit;}
+.tab:hover{border-color:var(--accent);color:var(--accent);}
+.tab.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+.works-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px;}
+.tile{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+  cursor:pointer;transition:transform .35s,box-shadow .35s;}
+.tile:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(60,50,35,.14);}
+.tile.lg{grid-column:span 7;}
+.tile.sm{grid-column:span 5;}
+.tile-img{aspect-ratio:16/10;overflow:hidden;}
+.tile-img img{transition:transform .6s ease;}
+.tile:hover .tile-img img{transform:scale(1.05);}
+.tile-info{padding:22px 24px;display:flex;gap:16px;align-items:flex-start;}
+.tile-no{font-size:15px;color:var(--accent);font-weight:700;}
+.tile-body h3{font-size:18px;}
+.tile-en{font-size:12px;color:var(--muted);margin-top:4px;letter-spacing:1px;}
+.tile-tags{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap;}
+.tag{font-size:11px;padding:4px 11px;border:1px solid var(--line);border-radius:20px;color:var(--ink2);}
+.tile-count{margin-left:auto;font-size:11px;color:var(--muted);letter-spacing:1px;align-self:center;}
+.tile-arrow{margin-left:auto;color:var(--muted);font-size:18px;}
+.tile.hide{display:none;}
+
+/* process */
+.process-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+.proc-step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;}
+.proc-step h3{font-size:17px;margin:12px 0 4px;}
+.proc-en{font-size:11px;letter-spacing:2px;color:var(--muted);margin-bottom:12px;}
+.proc-step p{font-size:12.5px;color:var(--ink2);line-height:1.9;}
+
+/* footer */
+.back{background:#1C1B18;color:#F5F1EA;border-radius:28px;margin:30px 0 50px;}
+.back-in{padding:80px 48px;text-align:center;}
+.back-logo{height:80px;width:auto;margin:0 auto 28px;}
+.back h2{font-size:30px;font-weight:900;letter-spacing:2px;}
+.back .slogan{margin-top:16px;color:#C9B98F;letter-spacing:3px;font-size:16px;}
+.back .en{margin-top:8px;font-size:12px;letter-spacing:4px;color:#8A8275;}
+.back .contact{margin-top:36px;display:flex;gap:36px;justify-content:center;flex-wrap:wrap;font-size:13px;color:#D8D2C5;}
+.back .co{margin-top:24px;font-size:12px;color:#8A8275;line-height:2;}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;
+  padding:36px;background:rgba(20,19,16,.82);backdrop-filter:blur(8px);}
+.lightbox.open{display:flex;}
+.lb-panel{background:var(--card);border-radius:26px;max-width:1080px;width:100%;max-height:88vh;
+  overflow:hidden;display:grid;grid-template-columns:1.15fr 1fr;position:relative;}
+.lb-media{position:relative;min-height:360px;background:#111;}
+.lb-side{padding:36px;overflow-y:auto;}
+.lb-side .lb-no{font-size:13px;color:var(--accent);letter-spacing:2px;}
+.lb-side h3{font-size:24px;margin:10px 0 4px;}
+.lb-side .lb-en{font-size:13px;color:var(--muted);letter-spacing:1px;}
+.lb-side .lb-sec{margin-top:10px;font-size:12px;color:var(--gold);letter-spacing:1px;}
+.lb-side .lb-desc{margin-top:18px;font-size:14px;color:var(--ink2);line-height:2;}
+.lb-side .lb-tags{margin-top:18px;display:flex;gap:6px;flex-wrap:wrap;}
+.lb-thumbs{display:flex;gap:10px;margin-top:22px;flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;}
+.lb-thumbs img{width:76px;height:58px;flex-shrink:0;border-radius:8px;object-fit:cover;cursor:pointer;opacity:.55;}
+.lb-thumbs img.active{opacity:1;outline:2px solid var(--accent);}
+.lb-close{position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;border:none;
+  background:rgba(255,255,255,.92);font-size:18px;cursor:pointer;color:var(--ink);z-index:3;}
+.lb-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:none;
+  background:rgba(255,255,255,.9);font-size:22px;line-height:1;cursor:pointer;color:var(--ink);z-index:3;
+  display:flex;align-items:center;justify-content:center;}
+.lb-arrow.prev{left:16px;}
+.lb-arrow.next{left:calc(57% - 56px);}
+.lb-count{position:absolute;left:16px;bottom:18px;background:rgba(0,0,0,.55);color:#fff;font-size:12px;
+  letter-spacing:1px;padding:5px 12px;border-radius:16px;z-index:3;}
+@media (max-width:1000px){ .lb-arrow.next{left:auto;right:16px;} }
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:32px;}
+  .philo-main,.philo-item,.philo-item.wide{grid-column:span 12;}
+  .motif-grid{grid-template-columns:1fr;}
+  .derive{grid-template-columns:repeat(2,1fr);}
+  .process-grid{grid-template-columns:repeat(2,1fr);}
+  .tile.lg,.tile.sm{grid-column:span 12;}
+  .lb-panel{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+}
+@media (max-width:640px){
+  .wrap{padding:0 22px;}
+  .derive,.process-grid{grid-template-columns:1fr;}
+  .back-in{padding:56px 26px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <img class="nav-logo" src="assets/logo_black.png" alt="logo">
+    <div class="nav-brand">土木心田设计<small>TUMU XINTIAN DESIGN</small></div>
+    <div class="nav-links">
+      <a href="#philosophy">设计理念</a>
+      <a href="#sources">创意来源</a>
+      <a href="#works">代表作品</a>
+      <a href="#process">服务流程</a>
+      <a href="#contact">联系我们</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">TUMU XINTIAN DESIGN · PORTFOLIO 2026</div>
+      <h1>空间为体<br>文化为魂</h1>
+      <div class="hero-year">2026 年度部分项目案例</div>
+      <p class="hero-sub">苏州土木心田装饰设计有限公司 · 常熟市东道文化传媒有限公司，立足苏州常熟，专注空间设计、展陈策划与工程落地，以空间叙事传递品牌与文化价值。</p>
+      <div class="hero-meta">
+        <span>苏州 · 常熟</span>
+        <span>策划 · 设计 · 施工 · 多媒体运维</span>
+      </div>
+      <a class="hero-cta" href="#works">浏览代表作品 ↓</a>
+    </div>
+    <div class="hero-media"><img src="assets/p19_m.jpg" alt="阳澄湖渔艺文创园鸟瞰"></div>
+  </div>
+</header>
+
+<section class="sec" id="philosophy">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">01 / PHILOSOPHY</div>
+      <h2>设计理念</h2>
+      <p>我们相信空间不仅是容器，更是文化与生活的载体。以叙事组织动线，以材质建立秩序，以光影营造氛围，让每一个项目都拥有可被阅读、可被停留的精神内核。</p>
+    </div>
+    <div class="philo-grid">
+      <div class="card philo-main reveal">
+        <h3>从场地到场景，<br>让设计回应真实的人与文化。</h3>
+        <p>事务所业务覆盖企业展厅、办公空间、商业零售、文创餐饮酒店与住宅私宅，提供从策划、概念、深化设计到施工落地与多媒体集成的全链条服务，在克制的视觉语言中呈现文化底蕴与专业度。</p>
+        <div class="stats">
+          <div><div class="n">24</div><div class="l">本年度项目</div></div>
+          <div><div class="n">05</div><div class="l">业务领域</div></div>
+          <div><div class="n">全链条</div><div class="l">策划 · 设计 · 施工 · 多媒体</div></div>
+          <div><div class="n">近20年</div><div class="l">行业沉淀（待核）</div></div>
+        </div>
+      </div>
+      <div class="card philo-item reveal">
+        <div class="idx">01</div>
+        <h3>空间叙事</h3>
+        <div class="en">SPATIAL NARRATIVE</div>
+        <p>以动线与界面组织起可阅读的故事，让空间拥有起承转合，承载品牌、文化与使用者的记忆。</p>
+      </div>
+      <div class="card philo-item wide reveal">
+        <div class="idx">02</div>
+        <h3>在地文化</h3>
+        <div class="en">LOCAL CULTURE</div>
+        <p>从场地文脉、产业特质与生活方式中提取母题，使设计扎根土地，而非套用通用风格。</p>
+      </div>
+      <div class="card philo-item wide reveal">
+        <div class="idx">03</div>
+        <h3>材质秩序</h3>
+        <div class="en">MATERIAL ORDER</div>
+        <p>木、石、金属、水泥与玻璃在比例与肌理中建立秩序，以克制的材质语言呈现高级耐看的质感。</p>
+      </div>
+      <div class="card philo-item wide reveal">
+        <div class="idx">04</div>
+        <h3>光影氛围</h3>
+        <div class="en">LIGHT &amp; ATMOSPHERE</div>
+        <p>用光塑造层次与情绪，自然光与人工照明共同界定空间气质，让氛围成为可被感知的设计。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="sources">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">02 / CREATIVE SOURCES</div>
+      <h2>创意来源</h2>
+      <p>每一个概念都源自对场地与文化的观察。我们从水乡肌理、工业遗存、东方禅意与自然材质中提炼母题，再经由清晰的推导路径转译为可落地的空间场景。</p>
+    </div>
+    <div class="motif-grid">
+    <figure class="motif-card reveal">
+      <div class="motif-img"><img src="assets/p19_m.jpg" alt="水乡肌理" loading="lazy"></div>
+      <figcaption>
+        <div class="motif-head"><h3>水乡肌理</h3><span>Water-town Texture</span></div>
+        <p>从湖荡、圩岸与红砖厂房的聚落格局中提取水系与院落关系，让更新后的空间延续场地的脉络与记忆。</p>
+        <div class="motif-ref">关联项目 · 阳澄湖渔艺文创园</div>
+      </figcaption>
+    </figure>
+
+    <figure class="motif-card reveal">
+      <div class="motif-img"><img src="assets/p16_m.jpg" alt="工业遗存" loading="lazy"></div>
+      <figcaption>
+        <div class="motif-head"><h3>工业遗存</h3><span>Industrial Heritage</span></div>
+        <p>保留旧厂房的梁柱、混凝土顶面与粗犷结构，在原有骨架上置入新的功能与光线，完成遗存的当代再生。</p>
+        <div class="motif-ref">关联项目 · 闸上文创茶咖空间</div>
+      </figcaption>
+    </figure>
+
+    <figure class="motif-card reveal">
+      <div class="motif-img"><img src="assets/p14_m.jpg" alt="东方禅意" loading="lazy"></div>
+      <figcaption>
+        <div class="motif-head"><h3>东方禅意</h3><span>Eastern Serenity</span></div>
+        <p>以月洞、木作、书画与留白组织内敛的空间序列，在开合进退之间营造沉静、可安放身心的东方意境。</p>
+        <div class="motif-ref">关联项目 · 禅修空间会所</div>
+      </figcaption>
+    </figure>
+
+    <figure class="motif-card reveal">
+      <div class="motif-img"><img src="assets/p09_m.jpg" alt="自然材质" loading="lazy"></div>
+      <figcaption>
+        <div class="motif-head"><h3>自然材质</h3><span>Natural Materiality</span></div>
+        <p>原木、石材、苔藓与自然光并置，以质朴未经修饰的材质组合，呈现松弛、温润而耐看的居住氛围。</p>
+        <div class="motif-ref">关联项目 · 自建度假别墅 · 原木侘寂</div>
+      </figcaption>
+    </figure></div>
+    <div class="derive">
+    <div class="derive-step reveal">
+      <div class="derive-no">01</div>
+      <h3>场地解读</h3>
+      <div class="derive-en">Site Reading</div>
+      <p>踏勘场地文脉、产业特质、动线与周边环境，梳理可用的空间线索与约束条件。</p>
+    </div>
+
+    <div class="derive-step reveal">
+      <div class="derive-no">02</div>
+      <h3>文化提取</h3>
+      <div class="derive-en">Cultural Extraction</div>
+      <p>从地域文化、品牌叙事与生活方式中提炼设计母题，形成可转译的视觉与空间概念。</p>
+    </div>
+
+    <div class="derive-step reveal">
+      <div class="derive-no">03</div>
+      <h3>空间转译</h3>
+      <div class="derive-en">Spatial Translation</div>
+      <p>将母题转化为布局、界面、材质、灯光与展陈语言，落实为可实施的空间方案。</p>
+    </div>
+
+    <div class="derive-step reveal">
+      <div class="derive-no">04</div>
+      <h3>场景落地</h3>
+      <div class="derive-en">Realization</div>
+      <p>配合施工深化、多媒体集成与现场调试，确保概念在真实场景中完整呈现。</p>
+    </div></div>
+  </div>
+</section>
+
+<section class="sec" id="works">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">03 / SELECTED WORKS</div>
+      <h2>代表作品</h2>
+      <p>本年度 24 个项目、356 张案例图，横跨五大业务领域。点击任意项目可浏览完整图集与设计说明。</p>
+    </div>
+    <div class="filters reveal"><button class="tab active" data-sec="all">全部</button>
+<button class="tab" data-sec="01">企业展厅与品牌空间</button>
+<button class="tab" data-sec="02">办公空间</button>
+<button class="tab" data-sec="03">商业零售与娱乐空间</button>
+<button class="tab" data-sec="04">文创 · 餐饮 · 酒店</button>
+<button class="tab" data-sec="05">住宅与私宅</button></div>
+    <div class="works-grid" id="worksGrid">
+    <article class="tile lg reveal" data-key="p10" data-sec="01">
+      <div class="tile-img"><img src="assets/p10_m.jpg" alt="国芯半导体展厅与厂区可视化" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">01</div>
+        <div class="tile-body">
+          <h3>国芯半导体展厅与厂区可视化</h3>
+          <div class="tile-en">Guoxin Semiconductor Showroom</div>
+          <div class="tile-tags"><span class="tag">企业展厅</span><span class="tag">厂区可视化</span><span class="tag">实景</span><span class="tile-count">38 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile lg reveal" data-key="p03" data-sec="01">
+      <div class="tile-img"><img src="assets/p03_m.jpg" alt="任昆产业园招商展示中心" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">02</div>
+        <div class="tile-body">
+          <h3>任昆产业园招商展示中心</h3>
+          <div class="tile-en">Renkun Park Reception &amp; Showroom</div>
+          <div class="tile-tags"><span class="tag">招商中心</span><span class="tag">展厅</span><span class="tag">外立面形象</span><span class="tile-count">4 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile sm reveal" data-key="p01" data-sec="01">
+      <div class="tile-img"><img src="assets/p01_m.jpg" alt="思睿观通企业参观通道" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">03</div>
+        <div class="tile-body">
+          <h3>思睿观通企业参观通道</h3>
+          <div class="tile-en">Skyconn Visitor Corridor</div>
+          <div class="tile-tags"><span class="tag">参观通道</span><span class="tag">文化墙</span><span class="tag">实景</span><span class="tile-count">7 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile sm reveal" data-key="p20" data-sec="01">
+      <div class="tile-img"><img src="assets/p20_m.jpg" alt="党群服务中心升级改造" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">04</div>
+        <div class="tile-body">
+          <h3>党群服务中心升级改造</h3>
+          <div class="tile-en">Party &amp; Service Center Renewal</div>
+          <div class="tile-tags"><span class="tag">公共空间</span><span class="tag">党群服务</span><span class="tag">实景+方案</span><span class="tile-count">34 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile lg reveal" data-key="p02" data-sec="01">
+      <div class="tile-img"><img src="assets/p02_m.jpg" alt="力超新材办公展厅与外墙形象" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">05</div>
+        <div class="tile-body">
+          <h3>力超新材办公展厅与外墙形象</h3>
+          <div class="tile-en">Lichao Office &amp; Showroom</div>
+          <div class="tile-tags"><span class="tag">办公</span><span class="tag">展厅</span><span class="tag">外墙形象</span><span class="tile-count">18 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile sm reveal" data-key="p12" data-sec="01">
+      <div class="tile-img"><img src="assets/p12_m.jpg" alt="展览中心中厅灯光亮化" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">06</div>
+        <div class="tile-body">
+          <h3>展览中心中厅灯光亮化</h3>
+          <div class="tile-en">Exhibition Hall Atrium Lighting</div>
+          <div class="tile-tags"><span class="tag">灯光装置</span><span class="tag">公共空间</span><span class="tile-count">2 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile lg reveal" data-key="p24" data-sec="02">
+      <div class="tile-img"><img src="assets/p24_m.jpg" alt="汉斯通新厂区办公楼" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">07</div>
+        <div class="tile-body">
+          <h3>汉斯通新厂区办公楼</h3>
+          <div class="tile-en">Hanstone New HQ Office</div>
+          <div class="tile-tags"><span class="tag">总部办公</span><span class="tag">大堂</span><span class="tag">接待</span><span class="tile-count">18 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile lg reveal" data-key="p11" data-sec="02">
+      <div class="tile-img"><img src="assets/p11_m.jpg" alt="时光映画办公室" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">08</div>
+        <div class="tile-body">
+          <h3>时光映画办公室</h3>
+          <div class="tile-en">Time Image Studio Office</div>
+          <div class="tile-tags"><span class="tag">创意办公</span><span class="tag">工业风</span><span class="tile-count">7 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile sm reveal" data-key="p23" data-sec="02">
+      <div class="tile-img"><img src="assets/p23_m.jpg" alt="无锡企业办公空间" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">09</div>
+        <div class="tile-body">
+          <h3>无锡企业办公空间</h3>
+          <div class="tile-en">Wuxi Corporate Office</div>
+          <div class="tile-tags"><span class="tag">企业办公</span><span class="tag">会议</span><span class="tile-count">23 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile sm reveal" data-key="p04" data-sec="02">
+      <div class="tile-img"><img src="assets/p04_m.jpg" alt="汉斯通办公楼装饰" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">10</div>
+        <div class="tile-body">
+          <h3>汉斯通办公楼装饰</h3>
+          <div class="tile-en">Hanstone Office Interiors</div>
+          <div class="tile-tags"><span class="tag">办公</span><span class="tag">新中式</span><span class="tile-count">10 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile lg reveal" data-key="p06" data-sec="03">
+      <div class="tile-img"><img src="assets/p06_m.jpg" alt="女装集合店" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">11</div>
+        <div class="tile-body">
+          <h3>女装集合店</h3>
+          <div class="tile-en">Women&#x27;s Fashion Store</div>
+          <div class="tile-tags"><span class="tag">零售</span><span class="tag">买手店</span><span class="tile-count">11 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile lg reveal" data-key="p13" data-sec="03">
+      <div class="tile-img"><img src="assets/p13_m.jpg" alt="男装展示空间" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">12</div>
+        <div class="tile-body">
+          <h3>男装展示空间</h3>
+          <div class="tile-en">Men&#x27;s Boutique</div>
+          <div class="tile-tags"><span class="tag">零售</span><span class="tag">展示空间</span><span class="tile-count">5 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile sm reveal" data-key="p05" data-sec="03">
+      <div class="tile-img"><img src="assets/p05_m.jpg" alt="南沙国际娱乐会所" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">13</div>
+        <div class="tile-body">
+          <h3>南沙国际娱乐会所</h3>
+          <div class="tile-en">Nansha Lounge &amp; Bar</div>
+          <div class="tile-tags"><span class="tag">娱乐会所</span><span class="tag">BAR</span><span class="tile-count">5 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile sm reveal" data-key="p18" data-sec="03">
+      <div class="tile-img"><img src="assets/p18_m.jpg" alt="盛世豪廷娱乐会所" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">14</div>
+        <div class="tile-body">
+          <h3>盛世豪廷娱乐会所</h3>
+          <div class="tile-en">Shengshi Pavilion Club</div>
+          <div class="tile-tags"><span class="tag">娱乐会所</span><span class="tag">实景</span><span class="tile-count">14 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile lg reveal" data-key="p19" data-sec="04">
+      <div class="tile-img"><img src="assets/p19_m.jpg" alt="阳澄湖渔艺文创园" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">15</div>
+        <div class="tile-body">
+          <h3>阳澄湖渔艺文创园</h3>
+          <div class="tile-en">Yangcheng Lake Fishery Cultural Park</div>
+          <div class="tile-tags"><span class="tag">文创园区</span><span class="tag">总体规划</span><span class="tag">重点项目</span><span class="tile-count">61 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile lg reveal" data-key="p08" data-sec="04">
+      <div class="tile-img"><img src="assets/p08_m.jpg" alt="石上三生文创咖饮" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">16</div>
+        <div class="tile-body">
+          <h3>石上三生文创咖饮</h3>
+          <div class="tile-en">Shisansheng Café &amp; Courtyard</div>
+          <div class="tile-tags"><span class="tag">茶咖</span><span class="tag">新中式院落</span><span class="tile-count">7 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile lg reveal" data-key="p16" data-sec="04">
+      <div class="tile-img"><img src="assets/p16_m.jpg" alt="闸上文创茶咖空间" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">17</div>
+        <div class="tile-body">
+          <h3>闸上文创茶咖空间</h3>
+          <div class="tile-en">Zhashang Lakeside Tea House</div>
+          <div class="tile-tags"><span class="tag">茶咖</span><span class="tag">湖景</span><span class="tag">工业侘寂</span><span class="tile-count">6 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile sm reveal" data-key="p21" data-sec="04">
+      <div class="tile-img"><img src="assets/p21_m.jpg" alt="度假酒店客房升级" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">18</div>
+        <div class="tile-body">
+          <h3>度假酒店客房升级</h3>
+          <div class="tile-en">Resort Hotel Room Renewal</div>
+          <div class="tile-tags"><span class="tag">酒店</span><span class="tag">客房</span><span class="tile-count">18 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile lg reveal" data-key="p07" data-sec="05">
+      <div class="tile-img"><img src="assets/p07_m.jpg" alt="自建别墅 · 挑空轻奢" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">19</div>
+        <div class="tile-body">
+          <h3>自建别墅 · 挑空轻奢</h3>
+          <div class="tile-en">Villa · Double-height Living</div>
+          <div class="tile-tags"><span class="tag">别墅</span><span class="tag">挑空客厅</span><span class="tile-count">12 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile lg reveal" data-key="p09" data-sec="05">
+      <div class="tile-img"><img src="assets/p09_m.jpg" alt="自建度假别墅 · 原木侘寂" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">20</div>
+        <div class="tile-body">
+          <h3>自建度假别墅 · 原木侘寂</h3>
+          <div class="tile-en">Holiday Villa · Wabi-sabi</div>
+          <div class="tile-tags"><span class="tag">别墅</span><span class="tag">原木</span><span class="tag">侘寂</span><span class="tile-count">10 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile lg reveal" data-key="p14" data-sec="05">
+      <div class="tile-img"><img src="assets/p14_m.jpg" alt="禅修空间会所" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">21</div>
+        <div class="tile-body">
+          <h3>禅修空间会所</h3>
+          <div class="tile-en">Meditation Retreat Club</div>
+          <div class="tile-tags"><span class="tag">会所</span><span class="tag">新中式</span><span class="tag">禅意</span><span class="tile-count">10 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile sm reveal" data-key="p17" data-sec="05">
+      <div class="tile-img"><img src="assets/p17_m.jpg" alt="中式自建别墅" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">22</div>
+        <div class="tile-body">
+          <h3>中式自建别墅</h3>
+          <div class="tile-en">Chinese-style Villa</div>
+          <div class="tile-tags"><span class="tag">别墅</span><span class="tag">新中式</span><span class="tile-count">15 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile sm reveal" data-key="p22" data-sec="05">
+      <div class="tile-img"><img src="assets/p22_m.jpg" alt="复式叠墅住宅" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">23</div>
+        <div class="tile-body">
+          <h3>复式叠墅住宅</h3>
+          <div class="tile-en">Duplex Residence</div>
+          <div class="tile-tags"><span class="tag">叠墅</span><span class="tag">现代</span><span class="tile-count">9 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article>
+
+    <article class="tile sm reveal" data-key="p15" data-sec="05">
+      <div class="tile-img"><img src="assets/p15_m.jpg" alt="自建别墅 · 现代挑空" loading="lazy"></div>
+      <div class="tile-info">
+        <div class="tile-no">24</div>
+        <div class="tile-body">
+          <h3>自建别墅 · 现代挑空</h3>
+          <div class="tile-en">Villa · Modern Atrium</div>
+          <div class="tile-tags"><span class="tag">别墅</span><span class="tag">现代</span><span class="tile-count">12 图</span></div>
+        </div>
+        <div class="tile-arrow" aria-hidden="true">→</div>
+      </div>
+    </article></div>
+  </div>
+</section>
+
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">04 / PROCESS</div>
+      <h2>服务流程</h2>
+      <p>从第一次现场踏勘到最终落地运维，以标准化的专业流程把控每个环节，确保概念完整、品质可控。</p>
+    </div>
+    <div class="process-grid">
+    <div class="proc-step reveal">
+      <div class="proc-no">01</div>
+      <h3>策划诊断</h3>
+      <div class="proc-en">Strategy</div>
+      <p>需求梳理、场地研判与定位策划，明确目标人群、品牌诉求与项目边界。</p>
+    </div>
+
+    <div class="proc-step reveal">
+      <div class="proc-no">02</div>
+      <h3>概念创意</h3>
+      <div class="proc-en">Concept</div>
+      <p>提出设计概念与母题方向，完成风格意向、空间叙事与初步方案推演。</p>
+    </div>
+
+    <div class="proc-step reveal">
+      <div class="proc-no">03</div>
+      <h3>深化设计</h3>
+      <div class="proc-en">Development</div>
+      <p>平面立面、材质灯光、展陈与多媒体系统深化，输出可施工的完整图纸与清单。</p>
+    </div>
+
+    <div class="proc-step reveal">
+      <div class="proc-no">04</div>
+      <h3>施工落地</h3>
+      <div class="proc-en">Delivery</div>
+      <p>配合现场深化、材料选型与工程对接，把控工艺细节与最终落地效果。</p>
+    </div>
+
+    <div class="proc-step reveal">
+      <div class="proc-no">05</div>
+      <h3>多媒体与运维</h3>
+      <div class="proc-en">Multimedia &amp; O&amp;M</div>
+      <p>数字化展项、灯光影音集成与后期运维支持，让空间体验持续可用。</p>
+    </div></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="back">
+      <div class="back-in">
+        <img class="back-logo" src="assets/logo_white.png" alt="logo">
+        <h2>土木心田 × 东道文化</h2>
+        <div class="slogan">空间为体，文化为魂</div>
+        <div class="en">SPACE AS BODY, CULTURE AS SOUL</div>
+        <div class="contact">
+          <span>电话 +138 6234 2151</span>
+          <span>地址 常熟市枫林路 205 号</span>
+          <span>苏州 · 常熟</span>
+        </div>
+        <div class="co">苏州土木心田装饰设计有限公司<br>常熟市东道文化传媒有限公司</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <div class="lb-panel">
+    <button class="lb-close" id="lbClose" aria-label="关闭">×</button>
+    <div class="lb-media" id="lbMedia"></div>
+    <button class="lb-arrow prev" id="lbPrev" aria-label="上一张">‹</button>
+    <button class="lb-arrow next" id="lbNext" aria-label="下一张">›</button>
+    <div class="lb-side">
+      <div class="lb-no" id="lbNo"></div>
+      <h3 id="lbName"></h3>
+      <div class="lb-en" id="lbEn"></div>
+      <div class="lb-sec" id="lbSec"></div>
+      <p class="lb-desc" id="lbDesc"></p>
+      <div class="lb-tags" id="lbTags"></div>
+      <div class="lb-thumbs" id="lbThumbs"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const PROJECTS = {"p10": {"no": "01", "name": "国芯半导体展厅与厂区可视化", "en": "Guoxin Semiconductor Showroom", "sec": "企业展厅与品牌空间", "tags": ["企业展厅", "厂区可视化", "实景"], "desc": "以蓝白科技调性串联接待大厅、产品展柜与厂区形象系统，发光字与多媒体大屏构成完整的品牌展示动线。", "main": "p10_m.jpg", "gallery": ["p10_g1.jpg", "p10_g2.jpg", "p10_g3.jpg", "p10_g4.jpg", "p10_g5.jpg", "p10_g6.jpg", "p10_g7.jpg", "p10_g8.jpg", "p10_g9.jpg", "p10_g10.jpg", "p10_g11.jpg", "p10_g12.jpg", "p10_g13.jpg", "p10_g14.jpg", "p10_g15.jpg", "p10_g16.jpg", "p10_g17.jpg", "p10_g18.jpg", "p10_g19.jpg", "p10_g20.jpg", "p10_g21.jpg", "p10_g22.jpg", "p10_g23.jpg", "p10_g24.jpg", "p10_g25.jpg", "p10_g26.jpg", "p10_g27.jpg", "p10_g28.jpg", "p10_g29.jpg", "p10_g30.jpg", "p10_g31.jpg", "p10_g32.jpg", "p10_g33.jpg", "p10_g34.jpg", "p10_g35.jpg", "p10_g36.jpg", "p10_g37.jpg"], "count": 38}, "p03": {"no": "02", "name": "任昆产业园招商展示中心", "en": "Renkun Park Reception & Showroom", "sec": "企业展厅与品牌空间", "tags": ["招商中心", "展厅", "外立面形象"], "desc": "面向产业园区招商接待，更新入口雨棚、冲孔板立面与室内接待大厅；山水形网状装置悬挂于大厅上空，沙盘洽谈与弧形接待台一体组织，塑造现代清晰的园区展示门户。", "main": "p03_m.jpg", "gallery": ["p03_g1.jpg", "p03_g2.jpg", "p03_g3.jpg"], "count": 4}, "p01": {"no": "03", "name": "思睿观通企业参观通道", "en": "Skyconn Visitor Corridor", "sec": "企业展厅与品牌空间", "tags": ["参观通道", "文化墙", "实景"], "desc": "围绕厂房参观流线布置门头标识、通道导引与车间文化墙，统一蓝白视觉，塑造规范有序的工业企业形象。", "main": "p01_m.jpg", "gallery": ["p01_g1.jpg", "p01_g2.jpg", "p01_g3.jpg", "p01_g4.jpg", "p01_g5.jpg", "p01_g6.jpg"], "count": 7}, "p20": {"no": "04", "name": "党群服务中心升级改造", "en": "Party & Service Center Renewal", "sec": "企业展厅与品牌空间", "tags": ["公共空间", "党群服务", "实景+方案"], "desc": "整合门头入口、发展历程墙、暖心服务站与青创梦空间，以弧形展墙与柔和光影营造开放亲和的党群阵地。", "main": "p20_m.jpg", "gallery": ["p20_g1.jpg", "p20_g2.jpg", "p20_g3.jpg", "p20_g4.jpg", "p20_g5.jpg", "p20_g6.jpg", "p20_g7.jpg", "p20_g8.jpg", "p20_g9.jpg", "p20_g10.jpg", "p20_g11.jpg", "p20_g12.jpg", "p20_g13.jpg", "p20_g14.jpg", "p20_g15.jpg", "p20_g16.jpg", "p20_g17.jpg", "p20_g18.jpg", "p20_g19.jpg", "p20_g20.jpg", "p20_g21.jpg", "p20_g22.jpg", "p20_g23.jpg", "p20_g24.jpg", "p20_g25.jpg", "p20_g26.jpg", "p20_g27.jpg", "p20_g28.jpg", "p20_g29.jpg", "p20_g30.jpg", "p20_g31.jpg", "p20_g32.jpg", "p20_g33.jpg"], "count": 34}, "p02": {"no": "05", "name": "力超新材办公展厅与外墙形象", "en": "Lichao Office & Showroom", "sec": "企业展厅与品牌空间", "tags": ["办公", "展厅", "外墙形象"], "desc": "涵盖办公楼大堂、会议接待、办公空间与外墙大字形象，现代稳重的材质语言统一内外形象。", "main": "p02_m.jpg", "gallery": ["p02_g1.jpg", "p02_g2.jpg", "p02_g3.jpg", "p02_g4.jpg", "p02_g5.jpg", "p02_g6.jpg", "p02_g7.jpg", "p02_g8.jpg", "p02_g9.jpg", "p02_g10.jpg", "p02_g11.jpg", "p02_g12.jpg", "p02_g13.jpg", "p02_g14.jpg", "p02_g15.jpg", "p02_g16.jpg", "p02_g17.jpg"], "count": 18}, "p12": {"no": "06", "name": "展览中心中厅灯光亮化", "en": "Exhibition Hall Atrium Lighting", "sec": "企业展厅与品牌空间", "tags": ["灯光装置", "公共空间"], "desc": "以山水意象的线性灯带勾勒挑高中厅，结合扶梯与挑空层次，强化公共空间的氛围与导向。", "main": "p12_m.jpg", "gallery": ["p12_g1.jpg"], "count": 2}, "p24": {"no": "07", "name": "汉斯通新厂区办公楼", "en": "Hanstone New HQ Office", "sec": "办公空间", "tags": ["总部办公", "大堂", "接待"], "desc": "大理石与木饰面交织的大堂礼仪空间，贯通开放办公、会议与高管接待，呈现克制而专业的总部气质。", "main": "p24_m.jpg", "gallery": ["p24_g1.jpg", "p24_g2.jpg", "p24_g3.jpg", "p24_g4.jpg", "p24_g5.jpg", "p24_g6.jpg", "p24_g7.jpg", "p24_g8.jpg", "p24_g9.jpg", "p24_g10.jpg", "p24_g11.jpg", "p24_g12.jpg", "p24_g13.jpg", "p24_g14.jpg", "p24_g15.jpg", "p24_g16.jpg", "p24_g17.jpg"], "count": 18}, "p11": {"no": "08", "name": "时光映画办公室", "en": "Time Image Studio Office", "sec": "办公空间", "tags": ["创意办公", "工业风"], "desc": "红橙点缀与白色柜体、水泥地面构成工业风创意办公，开放工位与洽谈区沿采光面有序展开。", "main": "p11_m.jpg", "gallery": ["p11_g1.jpg", "p11_g2.jpg", "p11_g3.jpg", "p11_g4.jpg", "p11_g5.jpg", "p11_g6.jpg"], "count": 7}, "p23": {"no": "09", "name": "无锡企业办公空间", "en": "Wuxi Corporate Office", "sec": "办公空间", "tags": ["企业办公", "会议"], "desc": "现代简约的办公体系，涵盖会议、会客、茶水与走道节点，木色与灰白搭配，明亮而克制。", "main": "p23_m.jpg", "gallery": ["p23_g1.jpg", "p23_g2.jpg", "p23_g3.jpg", "p23_g4.jpg", "p23_g5.jpg", "p23_g6.jpg", "p23_g7.jpg", "p23_g8.jpg", "p23_g9.jpg", "p23_g10.jpg", "p23_g11.jpg", "p23_g12.jpg", "p23_g13.jpg", "p23_g14.jpg", "p23_g15.jpg", "p23_g16.jpg", "p23_g17.jpg", "p23_g18.jpg", "p23_g19.jpg", "p23_g20.jpg", "p23_g21.jpg", "p23_g22.jpg"], "count": 23}, "p04": {"no": "10", "name": "汉斯通办公楼装饰", "en": "Hanstone Office Interiors", "sec": "办公空间", "tags": ["办公", "新中式"], "desc": "木作格栅与圆洞门元素融入办公接待与茶室空间，在现代办公秩序中融入东方雅致。", "main": "p04_m.jpg", "gallery": ["p04_g1.jpg", "p04_g2.jpg", "p04_g3.jpg", "p04_g4.jpg", "p04_g5.jpg", "p04_g6.jpg", "p04_g7.jpg", "p04_g8.jpg", "p04_g9.jpg"], "count": 10}, "p06": {"no": "11", "name": "女装集合店", "en": "Women's Fashion Store", "sec": "商业零售与娱乐空间", "tags": ["零售", "买手店"], "desc": "水泥灰地面与黑色展架构成极简买手店氛围，灯带与中岛展台引导陈列动线，空间干净利落。", "main": "p06_m.jpg", "gallery": ["p06_g1.jpg", "p06_g2.jpg", "p06_g3.jpg", "p06_g4.jpg", "p06_g5.jpg", "p06_g6.jpg", "p06_g7.jpg", "p06_g8.jpg", "p06_g9.jpg", "p06_g10.jpg"], "count": 11}, "p13": {"no": "12", "name": "男装展示空间", "en": "Men's Boutique", "sec": "商业零售与娱乐空间", "tags": ["零售", "展示空间"], "desc": "混凝土顶面天光井与中央苔藓造景相结合，粗犷材质中融入自然意象，营造安静的男装陈列场域。", "main": "p13_m.jpg", "gallery": ["p13_g1.jpg", "p13_g2.jpg", "p13_g3.jpg", "p13_g4.jpg"], "count": 5}, "p05": {"no": "13", "name": "南沙国际娱乐会所", "en": "Nansha Lounge & Bar", "sec": "商业零售与娱乐空间", "tags": ["娱乐会所", "BAR"], "desc": "黑金基调与霓虹线条勾勒大堂与包厢，大理石地面与灯带界面强化夜间娱乐的氛围感。", "main": "p05_m.jpg", "gallery": ["p05_g1.jpg", "p05_g2.jpg", "p05_g3.jpg", "p05_g4.jpg"], "count": 5}, "p18": {"no": "14", "name": "盛世豪廷娱乐会所", "en": "Shengshi Pavilion Club", "sec": "商业零售与娱乐空间", "tags": ["娱乐会所", "实景"], "desc": "霓虹装置、吧台与主题走廊构成沉浸式会所空间，色彩与灯光随界面节点递进，视觉冲击强烈。", "main": "p18_m.jpg", "gallery": ["p18_g1.jpg", "p18_g2.jpg", "p18_g3.jpg", "p18_g4.jpg", "p18_g5.jpg", "p18_g6.jpg", "p18_g7.jpg", "p18_g8.jpg", "p18_g9.jpg", "p18_g10.jpg", "p18_g11.jpg", "p18_g12.jpg", "p18_g13.jpg"], "count": 14}, "p19": {"no": "15", "name": "阳澄湖渔艺文创园", "en": "Yangcheng Lake Fishery Cultural Park", "sec": "文创 · 餐饮 · 酒店", "tags": ["文创园区", "总体规划", "重点项目"], "desc": "依托阳澄湖畔水乡肌理，更新红砖老厂房，置入艺术画廊、非遗工坊、湖畔咖啡、茶室与民宿，形成集展览、手作、餐饮与旅居于一体的文创群落。", "main": "p19_m.jpg", "gallery": ["p19_g1.jpg", "p19_g2.jpg", "p19_g3.jpg", "p19_g4.jpg", "p19_g5.jpg", "p19_g6.jpg", "p19_g7.jpg", "p19_g8.jpg", "p19_g9.jpg", "p19_g10.jpg", "p19_g11.jpg", "p19_g12.jpg", "p19_g13.jpg", "p19_g14.jpg", "p19_g15.jpg", "p19_g16.jpg", "p19_g17.jpg", "p19_g18.jpg", "p19_g19.jpg", "p19_g20.jpg", "p19_g21.jpg", "p19_g22.jpg", "p19_g23.jpg", "p19_g24.jpg", "p19_g25.jpg", "p19_g26.jpg", "p19_g27.jpg", "p19_g28.jpg", "p19_g29.jpg", "p19_g30.jpg", "p19_g31.jpg", "p19_g32.jpg", "p19_g33.jpg", "p19_g34.jpg", "p19_g35.jpg", "p19_g36.jpg", "p19_g37.jpg", "p19_g38.jpg", "p19_g39.jpg", "p19_g40.jpg", "p19_g41.jpg", "p19_g42.jpg", "p19_g43.jpg", "p19_g44.jpg", "p19_g45.jpg", "p19_g46.jpg", "p19_g47.jpg", "p19_g48.jpg", "p19_g49.jpg", "p19_g50.jpg", "p19_g51.jpg", "p19_g52.jpg", "p19_g53.jpg", "p19_g54.jpg", "p19_g55.jpg", "p19_g56.jpg", "p19_g57.jpg", "p19_g58.jpg", "p19_g59.jpg", "p19_g60.jpg"], "count": 61}, "p08": {"no": "16", "name": "石上三生文创咖饮", "en": "Shisansheng Café & Courtyard", "sec": "文创 · 餐饮 · 酒店", "tags": ["茶咖", "新中式院落"], "desc": "白墙灰瓦的院落格局，木构挑檐与茅草外摆围合出内外庭院，室内吧台与茶座延续朴素温润的东方气质。", "main": "p08_m.jpg", "gallery": ["p08_g1.jpg", "p08_g2.jpg", "p08_g3.jpg", "p08_g4.jpg", "p08_g5.jpg", "p08_g6.jpg"], "count": 7}, "p16": {"no": "17", "name": "闸上文创茶咖空间", "en": "Zhashang Lakeside Tea House", "sec": "文创 · 餐饮 · 酒店", "tags": ["茶咖", "湖景", "工业侘寂"], "desc": "保留混凝土顶面与粗犷梁柱，借大面积湖景落地窗引入自然光，原木家具与长桌形成面向水面的休闲茶咖场域。", "main": "p16_m.jpg", "gallery": ["p16_g1.jpg", "p16_g2.jpg", "p16_g3.jpg", "p16_g4.jpg", "p16_g5.jpg"], "count": 6}, "p21": {"no": "18", "name": "度假酒店客房升级", "en": "Resort Hotel Room Renewal", "sec": "文创 · 餐饮 · 酒店", "tags": ["酒店", "客房"], "desc": "围绕亲子与轻奢两类客房调性更新电梯厅与客房界面，材质与色彩按主题分区，提升度假入住体验。", "main": "p21_m.jpg", "gallery": ["p21_g1.jpg", "p21_g2.jpg", "p21_g3.jpg", "p21_g4.jpg", "p21_g5.jpg", "p21_g6.jpg", "p21_g7.jpg", "p21_g8.jpg", "p21_g9.jpg", "p21_g10.jpg", "p21_g11.jpg", "p21_g12.jpg", "p21_g13.jpg", "p21_g14.jpg", "p21_g15.jpg", "p21_g16.jpg", "p21_g17.jpg"], "count": 18}, "p07": {"no": "19", "name": "自建别墅 · 挑空轻奢", "en": "Villa · Double-height Living", "sec": "住宅与私宅", "tags": ["别墅", "挑空客厅"], "desc": "挑高客厅搭配大理石背景与楼梯造型，深色木作与暖光层次塑造轻奢大宅的公共礼仪空间。", "main": "p07_m.jpg", "gallery": ["p07_g1.jpg", "p07_g2.jpg", "p07_g3.jpg", "p07_g4.jpg", "p07_g5.jpg", "p07_g6.jpg", "p07_g7.jpg", "p07_g8.jpg", "p07_g9.jpg", "p07_g10.jpg", "p07_g11.jpg"], "count": 12}, "p09": {"no": "20", "name": "自建度假别墅 · 原木侘寂", "en": "Holiday Villa · Wabi-sabi", "sec": "住宅与私宅", "tags": ["别墅", "原木", "侘寂"], "desc": "浅色原木与米白基调贯穿客餐厅与茶区，低矮家具与自然材质营造松弛安静的度假居住氛围。", "main": "p09_m.jpg", "gallery": ["p09_g1.jpg", "p09_g2.jpg", "p09_g3.jpg", "p09_g4.jpg", "p09_g5.jpg", "p09_g6.jpg", "p09_g7.jpg", "p09_g8.jpg", "p09_g9.jpg"], "count": 10}, "p14": {"no": "21", "name": "禅修空间会所", "en": "Meditation Retreat Club", "sec": "住宅与私宅", "tags": ["会所", "新中式", "禅意"], "desc": "月洞门、书画挂画与深色木作层层递进，茶室、套房与音乐室构成沉静内敛的禅修会所空间。", "main": "p14_m.jpg", "gallery": ["p14_g1.jpg", "p14_g2.jpg", "p14_g3.jpg", "p14_g4.jpg", "p14_g5.jpg", "p14_g6.jpg", "p14_g7.jpg", "p14_g8.jpg", "p14_g9.jpg"], "count": 10}, "p17": {"no": "22", "name": "中式自建别墅", "en": "Chinese-style Villa", "sec": "住宅与私宅", "tags": ["别墅", "新中式"], "desc": "胡桃木色与白色墙面相间，客厅、茶室与厨房沿家庭生活动线展开，端正中透出居家温度。", "main": "p17_m.jpg", "gallery": ["p17_g1.jpg", "p17_g2.jpg", "p17_g3.jpg", "p17_g4.jpg", "p17_g5.jpg", "p17_g6.jpg", "p17_g7.jpg", "p17_g8.jpg", "p17_g9.jpg", "p17_g10.jpg", "p17_g11.jpg", "p17_g12.jpg", "p17_g13.jpg", "p17_g14.jpg"], "count": 15}, "p22": {"no": "23", "name": "复式叠墅住宅", "en": "Duplex Residence", "sec": "住宅与私宅", "tags": ["叠墅", "现代"], "desc": "深色木饰面与壁炉背景界定会客区，客餐厅贯通并连接户外庭院，呈现沉稳现代的复式居住格局。", "main": "p22_m.jpg", "gallery": ["p22_g1.jpg", "p22_g2.jpg", "p22_g3.jpg", "p22_g4.jpg", "p22_g5.jpg", "p22_g6.jpg", "p22_g7.jpg", "p22_g8.jpg"], "count": 9}, "p15": {"no": "24", "name": "自建别墅 · 现代挑空", "en": "Villa · Modern Atrium", "sec": "住宅与私宅", "tags": ["别墅", "现代"], "desc": "挑空客厅结合石材电视背景与弧形吊顶，卧室与主卧套房沿楼层分布，整体现代简洁。", "main": "p15_m.jpg", "gallery": ["p15_g1.jpg", "p15_g2.jpg", "p15_g3.jpg", "p15_g4.jpg", "p15_g5.jpg", "p15_g6.jpg", "p15_g7.jpg", "p15_g8.jpg", "p15_g9.jpg", "p15_g10.jpg", "p15_g11.jpg"], "count": 12}};
+const grid = document.getElementById('worksGrid');
+const lightbox = document.getElementById('lightbox');
+
+// 筛选
+document.querySelectorAll('.tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    const sec = tab.dataset.sec;
+    document.querySelectorAll('.tile').forEach(t=>{
+      t.classList.toggle('hide', sec!=='all' && t.dataset.sec!==sec);
+    });
+  });
+});
+
+// 灯箱
+let currentKey=null, currentIdx=0, currentImgs=[];
+const lbMedia=document.getElementById('lbMedia');
+const lbThumbs=document.getElementById('lbThumbs');
+
+function openLightbox(key){
+  const p=PROJECTS[key]; if(!p) return;
+  currentKey=key; currentImgs=[p.main,...p.gallery]; currentIdx=0;
+  document.getElementById('lbNo').textContent=p.no;
+  document.getElementById('lbName').textContent=p.name;
+  document.getElementById('lbEn').textContent=p.en;
+  document.getElementById('lbSec').textContent=p.sec;
+  document.getElementById('lbDesc').textContent=p.desc;
+  document.getElementById('lbTags').innerHTML=p.tags.map(t=>`<span class="tag">${t}</span>`).join('');
+  renderMedia(); renderThumbs();
+  lightbox.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function renderMedia(){
+  lbMedia.innerHTML=`<img src="assets/${currentImgs[currentIdx]}" alt=""><div class="lb-count">${currentIdx+1} / ${currentImgs.length}</div>`;
+}
+function step(d){
+  if(!currentImgs.length) return;
+  currentIdx=(currentIdx+d+currentImgs.length)%currentImgs.length;
+  renderMedia(); renderThumbs();
+}
+function renderThumbs(){
+  lbThumbs.innerHTML=currentImgs.map((f,i)=>`<img src="assets/${f}" data-i="${i}" class="${i===currentIdx?'active':''}">`).join('');
+  lbThumbs.querySelectorAll('img').forEach(im=>{
+    im.addEventListener('click',()=>{currentIdx=+im.dataset.i;renderMedia();renderThumbs();});
+  });
+}
+function closeLightbox(){lightbox.classList.remove('open');document.body.style.overflow='';}
+
+grid.addEventListener('click',e=>{
+  const tile=e.target.closest('.tile'); if(tile) openLightbox(tile.dataset.key);
+});
+document.getElementById('lbClose').addEventListener('click',closeLightbox);
+document.getElementById('lbPrev').addEventListener('click',()=>step(-1));
+document.getElementById('lbNext').addEventListener('click',()=>step(1));
+lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox();});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')closeLightbox();
+  if(e.key==='ArrowLeft')step(-1);
+  if(e.key==='ArrowRight')step(1);
+});
+
+// 渐入
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
